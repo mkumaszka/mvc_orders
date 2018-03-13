@@ -69,21 +69,16 @@ public class OrderHeaderController {
 
 
     private void changeOrderDate() {
-        //Pobrac od uzytkownika date
-//        LocalDate date = now();
-//        model.setOrderDate(date);
-
         Scanner inputReg = new Scanner(System.in);
 
-        System.out.print("Enter Date of Birth (DD/MM/YYYY): ");
+        System.out.print("Enter order date (DD/MM/YYYY): ");
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         LocalDate date = null;
         date = LocalDate.parse(inputReg.nextLine(), formatter);
         
-        System.out.println(date);
-        inputReg.close();
+        model.setOrderDate(date);
     }
 
     public static boolean isInteger(String s) {
